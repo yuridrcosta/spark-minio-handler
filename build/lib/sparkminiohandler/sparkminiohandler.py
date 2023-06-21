@@ -2,10 +2,11 @@ from datetime import datetime
 
 class SparkMinIOHandler:
 
-    def __init__(self, client_minio, bucket_name, spark_session):
+    def __init__(self, client_minio, bucket_name, spark_session, spark_context):
         self.client_minio = client_minio
         self.bucket_name = bucket_name
         self.spark_session = spark_session
+        self.spark_context = spark_context 
 
 
     def get_recent_table(self, tablename: str):
@@ -31,7 +32,7 @@ class SparkMinIOHandler:
 
     def load_json_spark_dataframe(self,  filename: str):
         response = self.client_minio.get_object(self.bucket_name, filename)
-        df = self.spark_session.read.json(response.data)
+        df = self.spark_session.read.json(self.spark_context.parallelize(response.data))
         return df
     
     def create_view_from_json_minio(self, tablename) :
