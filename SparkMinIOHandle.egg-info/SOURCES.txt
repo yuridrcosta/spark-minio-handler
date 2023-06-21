@@ -4,4 +4,4 @@ SparkMinIOHandle.egg-info/SOURCES.txt
 SparkMinIOHandle.egg-info/dependency_links.txt
 SparkMinIOHandle.egg-info/top_level.txt
 sparkminiohandler/__init__.py
-sparkminiohandler/spark_minio_handler.py
+sparkminiohandler/sparkminiohandler.py
