@@ -6,7 +6,7 @@ class SparkMinIOHandler:
     Classe para manipulação de dados do PySpark com o MinIO.
     """
 
-    def _init_(self, client_minio, bucket_name, spark_session, spark_context):
+    def _init_(self, client_minio, bucket_name, spark_session):
         """
         Inicializa o SparkMinIOHandler.
 
@@ -14,12 +14,10 @@ class SparkMinIOHandler:
             client_minio: Cliente MinIO.
             bucket_name: Nome do bucket do MinIO.
             spark_session: Sessão do Spark.
-            spark_context: Contexto do Spark.
         """
         self.client_minio = client_minio
         self.bucket_name = bucket_name
         self.spark_session = spark_session
-        self.spark_context = spark_context
 
 
     def get_recent_table(self, tablename: str):

@@ -30,7 +30,7 @@ A classe `SparkMinIOHandler` é usada para manipulação de dados do Spark com o
 
 ## Métodos
 
-### `_init_(self, client_minio, bucket_name, spark_session, spark_context)`
+### `_init_(self, client_minio, bucket_name, spark_session)`
 
 Inicializa o SparkMinIOHandler.
 
@@ -38,7 +38,6 @@ Inicializa o SparkMinIOHandler.
 - `client_minio`: Cliente MinIO.
 - `bucket_name`: Nome do bucket do MinIO.
 - `spark_session`: Sessão do Spark.
-- `spark_context`: Contexto do Spark.
 
 ---
 
